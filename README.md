@@ -15,9 +15,9 @@ RaspberryPi MOTD - Fork
 
 # Message of the Day Raspberry Pi
 
-**→** Written in pure Bash. 
-**→** No need to install any package. 
-**→** Tested with the Arch Linux ARM and Raspbian distributions.
+- Written in pure Bash. 
+- No need to install any package. 
+- Tested with the Arch Linux ARM and Raspbian distributions.
 
 # Installation
 Download and save the `motd.sh` bash script in the Raspberry Pi. 
