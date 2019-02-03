@@ -93,7 +93,7 @@ header="$header$(color $headerRaspberryColor "              '~'                 
 me=$(whoami)
 
 # Greetings
-greetings="$(color $greetingsColor "$(center "Welcome back, $me!")")"
+greetings="$(color $greetingsColor "$(center "Welcome back, $me!")")\n"
 greetings="$greetings$(color $greetingsColor "$(center "$(date +"%A, %d %B %Y, %T")")")"
 
 # System information
