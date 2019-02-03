@@ -23,9 +23,8 @@ RaspberryPi MOTD - Fork
 
 # Installation
 **One line installation! Do this at your own risk. Read all before doing this**                     
-*After this command you should anyway remove the last login info. Scroll down to the section.*
 
-    git clone -q https://github.com/marshallmyth/raspberrypimotd && cd raspberrypimotd && sudo cp motd.sh /etc/profile.d/ && sudo chown root:root motd.sh && sudo chmod +x motd.sh && sudo rm /etc/motd ; sudo systemctl restart ssh && cd .. && rm -rf raspberrypimotd && echo " " && echo "Done!"
+    git clone -q https://github.com/marshallmyth/raspberrypimotd && cd raspberrypimotd && sudo cp motd.sh /etc/profile.d/ && sudo chown root:root motd.sh && sudo chmod +x motd.sh && sudo rm /etc/motd ; sudo sed -i "s/#PrintLastLog .*/PrintLastLog no/1" /etc/ssh/sshd_config && sudo systemctl restart ssh && cd .. && rm -rf raspberrypimotd && echo " " && echo "Done!"
 
 Download and save the `motd.sh` bash script in the Raspberry Pi. 
 ```bash
