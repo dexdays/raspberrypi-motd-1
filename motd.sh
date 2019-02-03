@@ -91,13 +91,11 @@ me=$(whoami)
 # Greetings
 # Date Fix for Italian Language
 weekday=$(date +%A)
-monthday=$(date +%d)
 monthname=$(date +%B)
-year=$(date +%Y)
 #old $(date +"%A, %d %B %Y, %T")")")"
 # ----------------------------
 greetings="$(color $greetingsColor "$(center "Welcome back, $me!")")\n"
-greetings="$greetings$(color $greetingsColor "$(center "${weekday^}, ${monthday} ${monthname^} ${year}, $(date +%T)")")"
+greetings="$greetings$(color $greetingsColor "$(center "${weekday^}, $(date +%d) ${monthname^} $(date +%Y), $(date +%T)")")"
 
 # System information
 read loginFrom loginIP loginDate <<< $(last $me --time-format iso -2 | awk 'NR==2 { print $2,$3,$4 }')
@@ -108,8 +106,13 @@ if [[ $loginDate == - ]]; then
   loginIP=$loginFrom
 fi
 
+# Date LastLogin Fix for Italian Language
+weekday=$(date -d $loginDate +%A)
+monthname=$(date -d $loginDate +%B)
+# ----------------------------
 if [[ $loginDate == *T* ]]; then
-  login="$(date -d $loginDate +"%A, %d %B %Y, %T") ($loginIP)"
+  login="${weekday^}, $(date -d $loginDate +"%d") ${monthname^} $(date -d $loginDate +"%Y, %T") ($loginIP)"
+ #login="$(date -d $loginDate +"%A, %d %B %Y, %T") ($loginIP)"
 else
   # Not enough logins
   login="None"
