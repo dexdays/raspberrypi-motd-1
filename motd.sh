@@ -71,10 +71,6 @@ headerRaspberryColor=31
 greetingsColor=32
 statsLabelColor=32
 
-borderLine="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-borderTopLine=$(color $borderColor "┏$borderLine┓")
-borderBottomLine=$(color $borderColor "┗$borderLine┛")
-borderBar=$(color $borderColor "┃")
 borderEmptyLine="                                                                              "
 
 # Header
@@ -93,8 +89,15 @@ header="$header$(color $headerRaspberryColor "              '~'                 
 me=$(whoami)
 
 # Greetings
+# Date Fix for Italian Language
+weekday=$(date +%A)
+monthday=$(date +%d)
+monthname=$(date +%B)
+year=$(date +%Y)
+#old $(date +"%A, %d %B %Y, %T")")")"
+# ----------------------------
 greetings="$(color $greetingsColor "$(center "Welcome back, $me!")")\n"
-greetings="$greetings$(color $greetingsColor "$(center "$(date +"%A, %d %B %Y, %T")")")"
+greetings="$greetings$(color $greetingsColor "$(center "${weekday^}, ${monthday} ${monthname^} ${year}, $(date +%T)")")"
 
 # System information
 read loginFrom loginIP loginDate <<< $(last $me --time-format iso -2 | awk 'NR==2 { print $2,$3,$4 }')
