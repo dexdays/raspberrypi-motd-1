@@ -1,9 +1,15 @@
-  RaspberryPi MOTD - Fork
+RaspberryPi MOTD - Fork
 ====
 
-   **This is a fork of a motd script. This version removes the frame around the motd and fixes a bad visualization for Italian language**
-   
+   **This is a fork of a motd script**                          
    → **All credit to [Gagle](https://github.com/gagle/raspberrypi-motd)**
+   
+ ---
+#### Whats New?
+
+ - Removed frame around the motd (I didn't liked it)
+ - Fixed Italian Language Error that was showing Days and Months lowercase
+- 🔥 Added One Line Command for Installation
 
 ## Before
 <p align="center">
