@@ -79,16 +79,16 @@ borderEmptyLine="                                                               
 
 # Header
 header="$borderEmptyLine\n"
-header="$header$(color $headerLeafColor "          .~~.   .~~.                                                         ")"
-header="$header$(color $headerLeafColor "         '. \ ' ' / .'                                                        ")"
-header="$header$(color $headerRaspberryColor "          .~ .~~~..~.                      _                          _       ")"
-header="$header$(color $headerRaspberryColor "         : .~.'~'.~. :     ___ ___ ___ ___| |_ ___ ___ ___ _ _    ___|_|      ")"
-header="$header$(color $headerRaspberryColor "        ~ (   ) (   ) ~   |  _| .'|_ -| . | . | -_|  _|  _| | |  | . | |      ")"
-header="$header$(color $headerRaspberryColor "       ( : '~'.~.'~' : )  |_| |__,|___|  _|___|___|_| |_| |_  |  |  _|_|      ")"
-header="$header$(color $headerRaspberryColor "        ~ .~ (   ) ~. ~               |_|                 |___|  |_|          ")"
-header="$header$(color $headerRaspberryColor "         (  : '~' :  )                                                        ")"
-header="$header$(color $headerRaspberryColor "          '~ .~~~. ~'                                                         ")"
-header="$header$(color $headerRaspberryColor "              '~'                                                             ")"
+header="$header$(color $headerLeafColor "          .~~.   .~~.                                                         ")\n"
+header="$header$(color $headerLeafColor "         '. \ ' ' / .'                                                        ")\n"
+header="$header$(color $headerRaspberryColor "          .~ .~~~..~.                      _                          _       ")\n"
+header="$header$(color $headerRaspberryColor "         : .~.'~'.~. :     ___ ___ ___ ___| |_ ___ ___ ___ _ _    ___|_|      ")\n"
+header="$header$(color $headerRaspberryColor "        ~ (   ) (   ) ~   |  _| .'|_ -| . | . | -_|  _|  _| | |  | . | |      ")\n"
+header="$header$(color $headerRaspberryColor "       ( : '~'.~.'~' : )  |_| |__,|___|  _|___|___|_| |_| |_  |  |  _|_|      ")\n"
+header="$header$(color $headerRaspberryColor "        ~ .~ (   ) ~. ~               |_|                 |___|  |_|          ")\n"
+header="$header$(color $headerRaspberryColor "         (  : '~' :  )                                                        ")\n"
+header="$header$(color $headerRaspberryColor "          '~ .~~~. ~'                                                         ")\n"
+header="$header$(color $headerRaspberryColor "              '~'                                                             ")\n"
 
 me=$(whoami)
 
