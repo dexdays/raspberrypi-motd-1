@@ -24,7 +24,7 @@ RaspberryPi MOTD - Fork
 # Installation
 Download and save the `motd.sh` bash script in the Raspberry Pi. 
 ```bash
-$ git clone https://github.com/marshallmyth/raspberrypimotd/blob/master/motd.sh
+$ git clone https://github.com/marshallmyth/raspberrypimotd-Fork/blob/master/motd.sh
 ```
 
 Remember to add execution permissions and change the owner:
