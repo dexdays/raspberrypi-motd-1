@@ -1,4 +1,4 @@
-RaspberryPi MOTD - Fork
+  RaspberryPi MOTD - Fork
 ====
 
    **This is a fork of a motd script. This version removes the frame around the motd and fixes a bad visualization for Italian language**
@@ -24,8 +24,9 @@ RaspberryPi MOTD - Fork
 # Installation
 **One line installation! Do this at your own risk. Read all before doing this**                     
 
-    git clone -q https://github.com/marshallmyth/raspberrypimotd && cd raspberrypimotd && sudo cp motd.sh /etc/profile.d/ && sudo chown root:root motd.sh && sudo chmod +x motd.sh && sudo rm /etc/motd ; sudo sed -i "s/#PrintLastLog .*/PrintLastLog no/1" /etc/ssh/sshd_config && sudo systemctl restart ssh && cd .. && rm -rf raspberrypimotd && echo " " && echo "Done!"
+      bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypimotd/master/motdinstall.sh)
 
+## Manual Installation
 Download and save the `motd.sh` bash script in the Raspberry Pi. 
 ```bash
 $ git clone https://github.com/marshallmyth/raspberrypimotd-Fork/blob/master/motd.sh
@@ -88,4 +89,4 @@ Edit the `/etc/ssh/sshd_config` file and uncomment the line `#PrintLastLog yes`:
 # Update
 **One line update!**
 
-    git clone -q https://github.com/marshallmyth/raspberrypimotd && cd raspberrypimotd && sudo cp motd.sh /etc/profile.d/ && sudo systemctl restart ssh && cd .. && sudo rm -rf raspberrypimotd && echo " " && echo "Done!"
+    bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypimotd/master/motdupdate.sh)
