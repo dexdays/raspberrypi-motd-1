@@ -22,6 +22,11 @@ RaspberryPi MOTD - Fork
 - Tested with the Arch Linux ARM and Raspbian distributions.
 
 # Installation
+**One line installation! Do this at your own risk. Read all before doing this**
+*After this command you should anyway* [remove the last login info](https://github.com/marshallmyth/raspberrypimotd/blob/master/README.md#L57)
+
+    git clone -q https://github.com/marshallmyth/raspberrypimotd && cd raspberrypimotd && sudo cp motd.sh /etc/profile.d/ && sudo chown root:root motd.sh && sudo chmod +x motd.sh && sudo rm /etc/motd ; sudo systemctl restart ssh && cd .. && rm -rf raspberrypimotd && echo " " && echo "Done!"
+
 Download and save the `motd.sh` bash script in the Raspberry Pi. 
 ```bash
 $ git clone https://github.com/marshallmyth/raspberrypimotd-Fork/blob/master/motd.sh
@@ -81,3 +86,8 @@ Edit the `/etc/ssh/sshd_config` file and uncomment the line `#PrintLastLog yes`:
   ```
 ---
 **Note**: If you don't see the degree Celsius character correctly (`º`) make sure you have enabled a UTF8 locale ([Arch Linux locales](https://wiki.archlinux.org/index.php/locale)).
+# Update
+**One line update!**
+
+    git clone -q https://github.com/marshallmyth/raspberrypimotd && cd raspberrypimotd && sudo cp motd.sh /etc/profile.d/ && sudo systemctl restart ssh && cd .. &&sudo rm -rf raspberrypimotd-Fork && echo " " && echo "Done!"
+
