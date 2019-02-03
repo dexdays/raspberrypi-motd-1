@@ -1,6 +1,8 @@
 RaspberryPi MOTD - Fork
 ====
 
+   **This is a fork of a motd script. This version removes the frame around the motd and fixes a bad visualization for Italian language**
+   
    → **All credit to [Gagle](https://github.com/gagle/raspberrypi-motd)**
 
 ## Before
