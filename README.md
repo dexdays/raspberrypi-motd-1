@@ -14,6 +14,7 @@ RaspberryPi MOTD - Fork
 </p>
 
 # Message of the Day Raspberry Pi
+
 **→** Written in pure Bash. 
 **→** No need to install any package. 
 **→** Tested with the Arch Linux ARM and Raspbian distributions.
