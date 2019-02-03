@@ -68,8 +68,8 @@ function sec2time (){
 borderColor=35
 headerLeafColor=32
 headerRaspberryColor=31
-greetingsColor=36
-statsLabelColor=33
+greetingsColor=32
+statsLabelColor=32
 
 borderLine="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 borderTopLine=$(color $borderColor "┏$borderLine┓")
