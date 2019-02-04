@@ -29,20 +29,20 @@ RaspberryPi MOTD - Fork
 
 # Installation
 **One line installation! Do this at your own risk. Read all before doing this**                     
-
-      bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdinstall.sh)
-
+```bash
+  bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdinstall.sh)
+```
 ## Manual Installation
 Download and save the `motd.sh` bash script in the Raspberry Pi. 
 ```bash
-$ git clone https://github.com/marshallmyth/raspberrypi-motd
+  git clone https://github.com/marshallmyth/raspberrypi-motd
 ```
 
 Remember to add execution permissions and change the owner:
 
 ```bash
-$ sudo chown root:root motd.sh
-$ sudo chmod +x motd.sh
+  sudo chown root:root motd.sh
+  sudo chmod +x motd.sh
 ```
 ---
 
@@ -52,7 +52,7 @@ $ sudo chmod +x motd.sh
 
 Save the `motd.sh` script in the directory `/etc/profile.d` and it will be executed after the login. 
 ```bash
-  $ sudo cp raspberrypi-motd/motd.sh /etc/profile.d/
+  sudo cp raspberrypi-motd/motd.sh /etc/profile.d/
   ```
 *More about [autostarting scripts](https://wiki.archlinux.org/index.php/Bash#Configuration_file_sourcing_order_at_startup).*
 
@@ -61,7 +61,7 @@ Save the `motd.sh` script in the directory `/etc/profile.d` and it will be execu
  Remove the default MOTD. It is located in `/etc/motd`.
   
   ```bash
-  $ sudo rm /etc/motd
+  sudo rm /etc/motd
   ```
   
   ---
@@ -69,7 +69,7 @@ Remove the "last login" information and disable the `PrintLastLog` option from t
 Edit the `/etc/ssh/sshd_config` file and uncomment the line `#PrintLastLog yes`:
   
   ```bash
-  $ sudo nano /etc/ssh/sshd_config
+  sudo nano /etc/ssh/sshd_config
   ```
   
   Before:
@@ -88,11 +88,12 @@ Edit the `/etc/ssh/sshd_config` file and uncomment the line `#PrintLastLog yes`:
   Restart the `sshd` service:
   
   ```bash
-  $ sudo systemctl restart sshd
+  sudo systemctl restart sshd
   ```
 ---
 **Note**: If you don't see the degree Celsius character correctly (`º`) make sure you have enabled a UTF8 locale ([Arch Linux locales](https://wiki.archlinux.org/index.php/locale)).
 # Update
 **One line update!**
-
-    bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdupdate.sh)
+```bash
+bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdupdate.sh)
+```
