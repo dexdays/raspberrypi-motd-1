@@ -18,7 +18,7 @@ RaspberryPi MOTD - Fork
 
 ## After
 <p align="center">
-  <img src="https://github.com/marshallmyth/raspberrypimotd/blob/master/motd-noframe.png?raw=true"/>
+  <img src="https://github.com/marshallmyth/raspberrypi-motd/blob/master/motd-noframe.png?raw=true"/>
 </p>
 
 # Message of the Day Raspberry Pi
@@ -30,12 +30,12 @@ RaspberryPi MOTD - Fork
 # Installation
 **One line installation! Do this at your own risk. Read all before doing this**                     
 
-      bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypimotd/master/motdinstall.sh)
+      bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdinstall.sh)
 
 ## Manual Installation
 Download and save the `motd.sh` bash script in the Raspberry Pi. 
 ```bash
-$ git clone https://github.com/marshallmyth/raspberrypimotd-Fork/blob/master/motd.sh
+$ git clone https://github.com/marshallmyth/raspberrypi-motd
 ```
 
 Remember to add execution permissions and change the owner:
@@ -52,7 +52,7 @@ $ sudo chmod +x motd.sh
 
 Save the `motd.sh` script in the directory `/etc/profile.d` and it will be executed after the login. 
 ```bash
-  $ sudo cp raspberrypimotd/motd.sh /etc/profile.d/
+  $ sudo cp raspberrypi-motd/motd.sh /etc/profile.d/
   ```
 *More about [autostarting scripts](https://wiki.archlinux.org/index.php/Bash#Configuration_file_sourcing_order_at_startup).*
 
@@ -95,4 +95,4 @@ Edit the `/etc/ssh/sshd_config` file and uncomment the line `#PrintLastLog yes`:
 # Update
 **One line update!**
 
-    bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypimotd/master/motdupdate.sh)
+    bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdupdate.sh)
