@@ -9,7 +9,7 @@ RaspberryPi MOTD - Fork
 
  - Removed frame around the motd (I didn't liked it)
  - Fixed Italian Language Error that was showing Days and Months lowercase
-- 🔥 Added One Line Command for Installation
+- 🔥 Added One Line Command for Installation and Update
 
 ## Before
 <p align="center">
