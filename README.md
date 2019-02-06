@@ -9,14 +9,15 @@ RaspberryPi MOTD - Fork
 
  - Removed frame around the motd (I didn't liked it)
  - Fixed Italian Language Error that was showing Days and Months lowercase
+ - Fixed Installation Tutorial (the previously one break the system)
 - 🔥 Added One Line Command for Installation and Update
 
-## Before
+## Before - Old Version
 <p align="center">
   <img src="https://github.com/gagle/raspberrypi-motd/blob/master/motd.png?raw=true"/>
 </p>
 
-## After
+## After - New Version
 <p align="center">
   <img src="https://github.com/marshallmyth/raspberrypi-motd/blob/master/motd-noframe.png?raw=true"/>
 </p>
@@ -32,41 +33,62 @@ RaspberryPi MOTD - Fork
 ```bash
 bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdinstall.sh)
 ```
+# Update
+**One line update!**
+```bash
+bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdupdate.sh)
+```
 ## Manual Installation
-Download and save the `motd.sh` bash script in the Raspberry Pi. 
+***The following steps may vary depending on the OS. Arch Linux ARM is assumed.***
+
+---
+
+**Download and save the `motd.sh` bash script in the Raspberry Pi.** 
 ```bash
 git clone https://github.com/marshallmyth/raspberrypi-motd
+cd raspberrypi-motd
 ```
 
-Remember to add execution permissions and change the owner:
+**Add execution permissions and change the owner**
 
 ```bash
 sudo chown root:root motd.sh
 sudo chmod +x motd.sh
 ```
 ---
-
-***The following steps may vary depending on the OS. Arch Linux ARM is assumed.***
-
-*Autoexecute the script when the user logs in. There are multiple locations from where you can start the `motd.sh` script, for example using the `/etc/profile`.*
-
-Save the `motd.sh` script in the directory `/etc/profile.d` and it will be executed after the login. 
-```bash
-sudo cp raspberrypi-motd/motd.sh /etc/profile.d/
-  ```
-*More about [autostarting scripts](https://wiki.archlinux.org/index.php/Bash#Configuration_file_sourcing_order_at_startup).*
-
----
-
- Remove the default MOTD. It is located in `/etc/motd`.
-  
+ **Remove the default MOTD**            
+ It is located in `/etc/motd`.
   ```bash
 sudo rm /etc/motd
   ```
   
   ---
-Remove the "last login" information and disable the `PrintLastLog` option from the `sshd` service. 
-Edit the `/etc/ssh/sshd_config` file and uncomment the line `#PrintLastLog yes`:
+**Autoexecute the script when the user logs in**              
+There are multiple locations from where you can start the `motd.sh` script. In this tutorial we are linking it in `/home/pi/.profile`
+
+Save the `motd.sh` script in the directory `/etc/`
+```bash
+sudo cp raspberrypi-motd/motd.sh /etc/
+  ```
+and link `/etc/motd.sh` at the end of `/home/pi/.profile`, so it will be executed after login.      
+To automatically link use this command:
+```bash
+sudo echo "/etc/motd.sh" >> /home/pi/.profile
+  ```
+otherwise add it manually at the end of the file.
+```bash
+sudo nano /home/pi/.profile
+  ```
+*More about [autostarting scripts](https://wiki.archlinux.org/index.php/Bash#Configuration_file_sourcing_order_at_startup).*
+
+  ---
+**Remove the "last login" information and disable the `PrintLastLog` option from the `sshd` service.** 
+
+To automatically remove and disable PrintLastLog use this command:
+```bash
+sudo sed -i "s/#PrintLastLog .*/PrintLastLog no/1" /etc/ssh/sshd_config
+  ```
+Otherwise edit the `/etc/ssh/sshd_config` file and uncomment the line `#PrintLastLog yes`:
   
   ```bash
 sudo nano /etc/ssh/sshd_config
@@ -92,8 +114,3 @@ sudo systemctl restart sshd
   ```
 ---
 **Note**: If you don't see the degree Celsius character correctly (`º`) make sure you have enabled a UTF8 locale ([Arch Linux locales](https://wiki.archlinux.org/index.php/locale)).
-# Update
-**One line update!**
-```bash
-bash <(curl -Ss https://raw.githubusercontent.com/marshallmyth/raspberrypi-motd/master/motdupdate.sh)
-```
