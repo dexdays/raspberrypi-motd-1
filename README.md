@@ -66,14 +66,14 @@ sudo rm /etc/motd
 **Autoexecute the script when the user logs in**              
 There are multiple locations from where you can start the `motd.sh` script. In this tutorial we are linking it in `/home/pi/.profile`
 
-Save the `motd.sh` script in the directory `/etc/`
+Save the `motd.sh` script in the directory `/etc/motd`
 ```bash
-sudo cp raspberrypi-motd/motd.sh /etc/
+sudo cp raspberrypi-motd/motd.sh /etc/motd/motd.sh
   ```
-and link `/etc/motd.sh` at the end of `/home/pi/.profile`, so it will be executed after login.      
+and link `/etc/motd/motd.sh` at the end of `/home/pi/.profile`, so it will be executed after login.      
 To automatically link use this command:
 ```bash
-sudo echo "/etc/motd.sh" >> /home/pi/.profile
+sudo echo "/etc/motd/motd.sh" >> /home/pi/.profile
   ```
 otherwise add it manually at the end of the file.
 ```bash
